@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application' //아래서 applicationDistribution을 사용하기 위해 플러그인에 id 'application'을 추가해야한다.
+    // application은 내가 실행할 것을 의미하는데, 아래서 사용되는 task 중 하나를 run하면, 그 태스크가 곧 application이 된다.
+    id 'idea' // gredle in IntelliJ IDEA
+}
+
+mainClassName = 'Main' // applicationDistribution을 사용하기 위해 mainClassName을 설정해야한다.
+
+version '1.0-SNAPSHOT'
+
+application {
+    mainClassName = System.getProperty("exec.mainClass") ?: "default.Main"
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // json-simple
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+}
+
+
+
