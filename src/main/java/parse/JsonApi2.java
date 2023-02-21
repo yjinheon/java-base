@@ -1,6 +1,5 @@
 package parse;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,6 +42,8 @@ public class JsonApi2 {
         // 5. 통신을 위한 메소드 SET.
         conn.setRequestMethod("GET");
         // 6. 통신을 위한 Content-type SET.
+
+
         conn.setRequestProperty("Content-type", "application/json");
         // 7. 통신 응답 코드 확인.
         System.out.println("Response code: " + conn.getResponseCode());
@@ -58,10 +59,10 @@ public class JsonApi2 {
         String line;
         while ((line = rd.readLine()) != null) {
             sb.append(line);
-           // System.out.println(line);
+            // System.out.println(line);
         }
 
-        // print row.DDISH_NM
+        // print row.DDISH_NMf
         JSONParser parser = new JSONParser();
         JSONObject obj = (JSONObject) parser.parse(sb.toString());
         System.out.println(obj.get("mealServiceDietInfo"));
@@ -78,14 +79,11 @@ public class JsonApi2 {
         System.out.println("테스트:  "+"\n"+row3.get(0)); // row 1번째
 
         List<JSONObject> res3;
-        for(int i=0; i<row3.size(); i++) {
+        for(int i=0; i<row3.size(); i++) {  // row 1번째
             JSONObject res = (JSONObject) row3.get(i);
             System.out.println(res.get("DDISH_NM"));
         }
         // empty array
-
-
-
 
         // json array parsing
 
