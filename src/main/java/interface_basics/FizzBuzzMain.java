@@ -1,8 +1,9 @@
 interface FizzBuzz {
-    void printFizzBuzz(int n);
+    void printFizzBuzz(int n); // printFizzBuzz 메소드를 선언한다.
 }
 
 class FizzBuzzImpl implements FizzBuzz {
+    // printFizzBuzz 메소드를 구현한다.
     public void printFizzBuzz(int n) {
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
@@ -18,7 +19,7 @@ class FizzBuzzImpl implements FizzBuzz {
     }
 }
 
-public class Main {
+public class FizzBuzzMain {
     public static void main(String[] args) {
         FizzBuzz fizzBuzz = new FizzBuzzImpl();
         fizzBuzz.printFizzBuzz(100);
